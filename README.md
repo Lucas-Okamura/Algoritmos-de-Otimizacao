@@ -16,20 +16,20 @@ Em um problema de máquina única, utiliza-se o Algoritmo de Moore para
 diminuir o _makespan_, sendo seu procedimento especificado abaixo:
 
 
-	* Passo 1: Crie uma lista L1 com todos os jobs e uma lista L2 vazia, que será a
-lista dos jobs atrasados (_backlog list_);
+	* Passo 1: Crie uma lista L1 com todos os jobs e uma lista L2 vazia, que será a 
+	lista dos jobs atrasados (_backlog list_);
 
 	* Passo 2: Ordene L1 pela data de entrega prometida (_due date_);
 
 	* Passo 3: Se todos os _jobs_ em L1 estiverem dentro do prazo, vá ao passo 5.
-Senão, identifique em L1, entre o primeiro _job_ e o primeiro _job_ atrasado na
-lista, o _job_ que tiver o maior tempo de processamento;
+	Senão, identifique em L1, entre o primeiro _job_ e o primeiro _job_ atrasado na
+	lista, o _job_ que tiver o maior tempo de processamento;
 
 	* Passo 4: Retire o _job_ de maior tempo de processamento do passo anterior,
-inclua-o ao final de L2 e volte ao passo 3.
+	inclua-o ao final de L2 e volte ao passo 3.
 
 	* Passo 5: Adicione os _jobs_ de L2 ao final de L1. A lista L1 será uma sequência
-com o menor número de _jobs_ atrasados possível.
+	com o menor número de _jobs_ atrasados possível.
 
 ### 2. Máquinas Paralelas - LPT e SPT:
 
@@ -41,16 +41,16 @@ que funcionam simultaneamente. Utilizando o método heurístico PMP - LPT
 (_Parallel Machine Problem_ - _longest processing time_), tem-se os passos:
 
 	* Passo 1: Ordenar os jobs em ordem decrescente dos tempos de 
-processamento (LPT);
+	processamento (LPT);
 
 	* Passo 2: Seguindo a ordem LPT, alocar os _jobs_ na máquina com menor 
-carga (soma dos tempos de processamento dos jobs já alocados). Em caso 
-de empate, escolher arbitrariamente uma entre as máquinas com menor 
-carga (p.ex: máquina de menor índice);
+	carga (soma dos tempos de processamento dos jobs já alocados). Em caso 
+	de empate, escolher arbitrariamente uma entre as máquinas com menor 
+	carga (p.ex: máquina de menor índice);
 
 	* Passo 3: Definidas as alocações, ordenar os _jobs_ em cada máquina em
-ordem crescente dos tempos (SPT). A esquematização encontrada é aquela
-que minimiza o _makespan_.
+	ordem crescente dos tempos (SPT). A esquematização encontrada é aquela
+	que minimiza o _makespan_.
 
 OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
 de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _pandas_. O arquivo 
