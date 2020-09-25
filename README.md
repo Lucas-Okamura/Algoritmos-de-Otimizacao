@@ -17,19 +17,19 @@ diminuir o _makespan_, sendo seu procedimento especificado abaixo:
 
 
 	* Passo 1: Crie uma lista L1 com todos os jobs e uma lista L2 vazia, que será a 
-	lista dos jobs atrasados (_backlog list_);
+	lista dos jobs atrasados (backlog list);
 
-	* Passo 2: Ordene L1 pela data de entrega prometida (_due date_);
+	* Passo 2: Ordene L1 pela data de entrega prometida (due date);
 
-	* Passo 3: Se todos os _jobs_ em L1 estiverem dentro do prazo, vá ao passo 5.
-	Senão, identifique em L1, entre o primeiro _job_ e o primeiro _job_ atrasado na
-	lista, o _job_ que tiver o maior tempo de processamento;
+	* Passo 3: Se todos os jobs em L1 estiverem dentro do prazo, vá ao passo 5.
+	Senão, identifique em L1, entre o primeiro job e o primeiro job atrasado na
+	lista, o job que tiver o maior tempo de processamento;
 
-	* Passo 4: Retire o _job_ de maior tempo de processamento do passo anterior,
+	* Passo 4: Retire o job de maior tempo de processamento do passo anterior,
 	inclua-o ao final de L2 e volte ao passo 3.
 
-	* Passo 5: Adicione os _jobs_ de L2 ao final de L1. A lista L1 será uma sequência
-	com o menor número de _jobs_ atrasados possível.
+	* Passo 5: Adicione os jobs de L2 ao final de L1. A lista L1 será uma sequência
+	com o menor número de jobs atrasados possível.
 
 ### 2. Máquinas Paralelas - LPT e SPT:
 
@@ -43,14 +43,14 @@ que funcionam simultaneamente. Utilizando o método heurístico PMP - LPT
 	* Passo 1: Ordenar os jobs em ordem decrescente dos tempos de 
 	processamento (LPT);
 
-	* Passo 2: Seguindo a ordem LPT, alocar os _jobs_ na máquina com menor 
+	* Passo 2: Seguindo a ordem LPT, alocar os jobs na máquina com menor 
 	carga (soma dos tempos de processamento dos jobs já alocados). Em caso 
 	de empate, escolher arbitrariamente uma entre as máquinas com menor 
 	carga (p.ex: máquina de menor índice);
 
-	* Passo 3: Definidas as alocações, ordenar os _jobs_ em cada máquina em
+	* Passo 3: Definidas as alocações, ordenar os jobs em cada máquina em
 	ordem crescente dos tempos (SPT). A esquematização encontrada é aquela
-	que minimiza o _makespan_.
+	que minimiza o makespan.
 
 OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
 de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _pandas_. O arquivo 
@@ -103,4 +103,40 @@ os passos abaixo:
 OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
 de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _xlwings_. O arquivo 
 "xl05 2 A PFSP Cmax CDS.xlsx" mostra exemplos de como os dados devem 
+ser dispostos na planilha.
+
+#### 3.3. Algoritmo de _Local Search_ (LS)
+
+* **Desafio 5 - PFSP LS - Dupla 09.ipynb**
+
+O algoritmo de _Local Search_ para máquinas em série se baseia na retirada e inserção de
+jobs em uma determinada sequência, recalculando o makespan máxima e iterando até encontrar
+um valor ótimo, através de uma busca exaustiva. O pseudocódigo para este algoritmo é mostrado abaixo:
+
+```
+leia os dados de entrada (solução inicial)
+bestCmax=cmax da solução inicial
+melhoria=Verdadeiro
+enquanto melhoria faça:
+   melhoria=Falso
+   jotas=lista de indices de 1 a n
+   jotas=jotas embaralhados
+   para cada j1 em jotas faça:
+      remova o job da posição j1 e chame-o de job1
+      bestPos=j1
+      para j2=1 até n faça:
+         insira o job1 na posição j2
+         calcule o cmax
+         se cmax<bestCmax então:
+            bestPos=j2
+            melhoria=Verdadeiro
+	    bestCmax=cmax
+         retire o job1 da posição j2
+      insira o job1 na melhor posição
+retorna jobs e cmax
+```
+
+OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
+de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _xlwings_. O arquivo 
+"xl10 1 B PFSP Cmax NEH.xlsx" mostra exemplos de como os dados devem 
 ser dispostos na planilha.
