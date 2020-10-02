@@ -140,3 +140,17 @@ OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
 de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _xlwings_. O arquivo 
 "xl10 1 B PFSP Cmax NEH.xlsx" mostra exemplos de como os dados devem 
 ser dispostos na planilha.
+
+#### 3.4. Algoritmo de _Iterated Greedy_ (IG)
+
+O Algoritmo de _Iterated Greedy_ é uma meta-heurística, que se trata de uma busca
+exaustiva das soluções possíveis até encontrar a melhor. Para o programa desenvolvido,
+a solução inicial é aquela encontrada pelos métodos NEH + LS. Detalhes do método podem
+ser encontrados no artigo de Ruiz & Stützle, 2007.
+
+* **Desafio 6 - PFSP IG - Dupla 09.ipynb**
+
+OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
+de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _xlwings_. O arquivo 
+"xl10 2 B PFSP Cmax NEH-LS.xlsx" mostra exemplos de como os dados devem 
+ser dispostos na planilha.
