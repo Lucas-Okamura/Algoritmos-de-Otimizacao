@@ -154,3 +154,17 @@ OBS: O código para máquinas paralelas foi desenvolvido para ler arquivos
 de extensão .xlsx e adquirir dados a partir dele utilizando a biblioteca _xlwings_. O arquivo 
 "xl10 2 B PFSP Cmax NEH-LS.xlsx" mostra exemplos de como os dados devem 
 ser dispostos na planilha.
+
+#### 3.5. NEH, LS, IG integrados - Análise de Variância (ANOVA)
+
+* **Dupla 09 - Desafio 7 - Heurística.ipynb** (Python)
+
+Aplicação dos 3 algoritmos seguidos.
+
+* **Dupla 09 - Desafio 7 - Resultados.ipynb** (R)
+
+Análise de variância de Cmax em relação às variáveis do algoritmo de IG.
+
+Com todos algoritmos testados individualmente, integrou-se os três métodos em um só programa, testando
+para instâncias de testes aleatórias geradas em um arquivo excel. Então, foi realizada uma análise de variância no 
+software _R_ para verificar as influências entre as variáveis.
