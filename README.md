@@ -172,3 +172,11 @@ Análise de variância de Cmax em relação às variáveis do algoritmo de IG.
 Com todos algoritmos testados individualmente, integrou-se os três métodos em um só programa, testando
 para instâncias de testes aleatórias geradas em um arquivo excel. Então, foi realizada uma análise de variância no 
 software _R_ para verificar as influências entre as variáveis.
+
+#### 3.5. Gurobi API (Python)
+
+* **Desafio 8 - PFSP Cmax Gurobi - Dupla 09.ipynb**
+
+Utilizando a API do Gurobi para Python, desenvolveu-se um código de modo que o _Permutation Flowshop
+Problem_ fosse resolvido, encontrando um resultado ótimo. As instâncias de teste foram elaboradas e 
+colocadas em um arquivo .xlsx (xl05 2 A PFSP Cmax CDS.xlsx).
