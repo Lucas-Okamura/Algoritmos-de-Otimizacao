@@ -6,6 +6,10 @@ _jobs_ a serem realizados por um determinado conjunto de máquinas. Isto é,
 diminuir tempo de conclusão de todos _jobs_.
 Os algoritmos se baseiam principalmente em heurísticas.
 
+**Importante:** Os métodos utilizados na disciplina são heurísticos, ou seja, 
+são exaustivos e, então, os códigos não são completamente otimizados em termos de complexidade
+computacional, devido ao intenso uso de _loops_.
+
 Entre os programas, incluem-se os seguintes problemas e algoritmos:
 
 ### 1. Máquina Única - Algoritmo de Moore:
